@@ -1,11 +1,16 @@
 # fractalCw.py
 
 import ctypes
+import os, sys
+cwd = os.path.abspath(os.path.dirname(sys.argv[0]))
+print(cwd)
 
-libpath = "/home/clem/prog/mp-fractal/fractallib.so"
+lib = "fractallib.so"
+libFullPath = "{}/{}".format(cwd, lib)
+print(libFullPath)
 _csuite = None
 
-_flib = ctypes.CDLL(libpath)
+_flib = ctypes.CDLL(libFullPath)
 _flib.suite.argtypes = (ctypes.c_float, ctypes.c_float, ctypes.c_int)
 _csuite = _flib.suite
 	

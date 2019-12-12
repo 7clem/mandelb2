@@ -3,7 +3,6 @@
 import random
 from matplotlib import pyplot as plot
 import numpy as np
-import sys
 import fractalCw
 
 DEPTH = 256
